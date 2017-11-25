@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class EmailClass {
+	public static void main(String[] args) {
+        Scanner scann = new Scanner(System.in);
+        System.out.println("Enter adres email");
+        String email = scann.next();
+        
+        int i = 0;
+        boolean fl = false;
+        while(i < email.length()){
+            char l = email.charAt(i);
+            
+            if(Character.isSpaceChar(l) || l == '!' || l == '#' || l == '$' || l == '%' || l == '^' || l == '&' 
+            		|| l == '*' || l == '(' || l == ')' || l == '?' || l == '<' || l == '>'){
+            	System.out.println("Wrong email format entered");
+            	fl = true;
+            	break;
+            }else if( l == '@'){
+            	fl = true;
+            }
+            
+            i++;
+        }
+        
+       if(!fl) {
+    	   System.out.println("Wrong email format entered"); 
+       }
+       
+	}
+
+}
